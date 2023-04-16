@@ -5,6 +5,8 @@ from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
+__all__ = ['User', ]
+
 class User(AbstractUser):
     username_validator = ASCIIUsernameValidator()
 
