@@ -1,0 +1,13 @@
+- model: backend.User
+  pk: 1
+  fields:
+    username: admin
+    first_name: ''
+    last_name: ''
+    email: admin@localhost
+    is_staff: true
+    is_active: true
+    is_superuser: true
+    last_login: '2019-03-19T14:00:00Z'
+    date_joined: '2019-03-19T14:00:00Z'
+    password: pbkdf2_sha256$600000$ReBxyTy2QTuhfBSmeSjLgH$+MPSZOvQmfRdJla/t6mhpqQi8o54uP1Kw4gm5k1ARW4= # admin123

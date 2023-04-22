@@ -5,7 +5,9 @@ from django import forms
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 
-from backend.models import User
+from backend.models import User, Group
+
+__all__ = ['UserAdmin', 'GroupAdmin']
 
 class UserForm(forms.ModelForm):
     username = UsernameField()
@@ -80,3 +82,10 @@ class UserAdmin(OldUserAdmin):
     autocomplete_fields = (
         'groups', 
     )
+
+
+class GroupAdmin(ModelAdmin):
+    list_display = ('name', 'leader')
+    search_fields = ('name', )
+    autocomplete_fields = ('users', 'leader')
+    readonly_fields = ('users',)
