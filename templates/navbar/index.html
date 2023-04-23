@@ -1,0 +1,13 @@
+<div class="w-full min-h-[4rem] sticky top-0 bg-gray-200 flex max-w-full">
+  <header class="flex max-w-7xl w-full items-center justify-center m-auto">
+    {% block logo %}
+      {% include 'navbar/logo.html' %}
+    {% endblock logo %}
+    {% block menu %}
+      {% include 'navbar/menu.html' %}
+    {% endblock menu %}
+    {% block auth %}
+      {% include 'navbar/auth.html' %}
+    {% endblock auth %}
+  </header>
+</div>

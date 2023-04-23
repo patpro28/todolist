@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
-__all__ = ['User', 'Group']
+__all__ = ['User', 'Team']
 
 class User(AbstractUser):
     username_validator = ASCIIUsernameValidator()
@@ -23,8 +23,10 @@ class User(AbstractUser):
         },
     )
 
+    REQUIRED_FIELDS = []
 
-class Group(models.Model):
+
+class Team(models.Model):
     name = models.CharField(max_length=255)
     users = models.ManyToManyField(User, related_name='teams')
     leader = models.ForeignKey(User, related_name='leader_teams', on_delete=models.SET_NULL, null=True, blank=True)

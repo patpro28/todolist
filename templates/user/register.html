@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="m-auto flex flex-col items-center justify-center">
+  <div class="font-bold uppercase text-xl -mt-20">
+    Đăng ký tài khoản mới
+  </div>
+  <form action="" method="post" class="rounded-xl border mt-10 border-indigo-300 p-4 w-80">
+    {% csrf_token %}
+    <label for="username" class='block mt-5'>
+      <span class="font-semibold text-gray-700">Tên đăng nhập</span>
+      <input type="text" name="username" id="username" autocomplete="off" class="w-full rounded-lg">
+    </label>
+    <label for="password1" class='block mt-5'>
+      <span class="font-semibold text-gray-700">Mật khẩu</span>
+      <input type="password" name="password1" id="password1" autocomplete="off" class="w-full rounded-lg">
+    </label>
+    <label for="password2" class='block mt-5'>
+      <span class="font-semibold text-gray-700">Xác nhận mật khẩu</span>
+      <input type="password" name="password2" id="password2" autocomplete="off" class="w-full rounded-lg">
+    </label>
+
+    <button type='submit' class="mt-5 w-full bg-blue-500 p-2 text-white rounded-lg text-center">
+      Đăng nhập
+    </button>
+  </form>
+</div>
+{% endblock body %}

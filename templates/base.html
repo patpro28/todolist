@@ -7,9 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   {# <link rel="stylesheet" href="{% static 'full_style.css' %}"> #}
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 </head>
 <body>
-  {% block body %}{% endblock body %}
+  {% include 'navbar/index.html' %}
+  <div class="min-h-[calc(100vh_-_4rem)] w-full flex items-center justify-center bg-gray-200/50">
+    <div class="mx-auto max-w-7xl">
+      {% block body %}{% endblock body %}
+    </div>
+  </div>
 </body>
 </html>
