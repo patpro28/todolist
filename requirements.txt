@@ -1,3 +1,7 @@
 django
 channels
 pyyaml
+django-ace
+pygments
+pymdown-extensions
+markupsafe

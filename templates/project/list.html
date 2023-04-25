@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+<div class="my-10 font-bold text-3xl">
+  Danh sách dự án
+</div>
+{% endblock content_title %}
+
+{% block body %}
+  <div class="grid auto-rows-fr grid-cols-1 gap-2">
+    {% for project in projects %}
+    <div class="flex items-center rounded-xl bg-white py-2 px-4 shadow-md">
+      <div class="flex-1">
+        <a href="{% url 'project:detail' project.slug %}" class="font-semibold hover:text-blue-500">
+          {{ project.title }}
+        </a>
+      </div>
+      <div class="flex flex-end items-center gap-2">
+        <a href="#" class="border px-3 py-2 font-semibold text-white rounded-lg shadow-md transition-all ease-in-out duration-500 hover:bg-[100%_0%] btn-default">Update</a>
+        <a href="#" class="border px-3 py-2 font-semibold text-white rounded-lg shadow-md transition-all ease-in-out duration-500 hover:bg-[100%_0%] btn-light-red">Delete</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock body %}

@@ -6,13 +6,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  {% block media %}{% endblock media %}
+  <style>
+    .btn-default {
+      background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+      box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+      background-size: 300% 100%;
+    }
+    
+    .btn-purple-red {
+      background-size: 300% 100%;
+      background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+      box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+    }
+  
+    .btn-light-red {
+      background-size: 300% 100%;
+      background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+      box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+    }
+  </style>
   {# <link rel="stylesheet" href="{% static 'full_style.css' %}"> #}
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  {% block media_js %}{% endblock media_js %}
 </head>
 <body>
   {% include 'navbar/index.html' %}
-  <div class="min-h-[calc(100vh_-_4rem)] w-full flex items-center justify-center bg-gray-200/50">
-    <div class="mx-auto max-w-7xl">
+  <div class="min-h-[calc(100vh_-_4rem)] w-full flex flex-col items-center bg-gray-200/50">
+    {% block content_title %}{% endblock content_title %}
+    <div class="mx-auto max-w-7xl w-full">
       {% block body %}{% endblock body %}
     </div>
   </div>

@@ -36,7 +36,7 @@ class UserLoginView(LoginView):
         messages.error(self.request, _('Login failed!'))
         return super().form_invalid(form)
 
-    
+
 class UserLogoutView(LogoutView):
     def post(self, request, *args, **kwargs):
         messages.success(self.request, _('Logout success!'))

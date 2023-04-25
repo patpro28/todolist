@@ -1,0 +1,17 @@
+- model: project.Project
+  pk: 1
+  fields:
+    title: Dịch đề cho Tmath
+    slug: dich-de-cho-tmath
+    description: Dịch các đề pdf sang markdown cho Tmath
+    created_at: 2023-04-23T00:00:00Z
+    admins: [1]
+
+- model: project.Project
+  pk: 2
+  fields:
+    title: Tạo test cho Tmath
+    slug: tao-test-cho-tmath
+    description: Tạo test các bài tập cho Tmath
+    created_at: 2023-04-23T00:00:00Z
+    admins: [1]

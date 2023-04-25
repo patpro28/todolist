@@ -18,6 +18,6 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at')
     list_filter = ('admins',)
     search_fields = ('title', 'description')
-    readonly_fields = ('created_at',)
+    readonly_fields = ('created_at', 'slug')
     autocomplete_fields = ('admins',)
     form = ProjectAdminForm

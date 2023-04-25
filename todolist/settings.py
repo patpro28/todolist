@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_ace',
     'backend',
     'channels',
     'project',
@@ -132,3 +133,28 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Markdown
+
+MARKDOWN_EXTENSIONS = [
+    'pymdownx.betterem',
+    'pymdownx.arithmatex',
+    'pymdownx.superfences',
+    'pymdownx.emoji',
+    'pymdownx.extra',
+    'pymdownx.details',
+    'markdown.extensions.footnotes',
+    'markdown.extensions.attr_list',
+    'markdown.extensions.def_list',
+    'markdown.extensions.tables',
+    'markdown.extensions.abbr',
+    'markdown.extensions.md_in_html',
+    'markdown.extensions.smarty',
+]
+
+MARKDOWN_EXTENSIONS_CONFIG = {
+    'pymdownx.arithmatex': {
+        'generic': True,
+
+    },
+}

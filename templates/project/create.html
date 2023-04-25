@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block media %}
+{{ form.media.css }}
+{% endblock media %}
+
+{% block media_js %}
+{{ form.media.js }}
+{% endblock media_js %}
+
+{% block body %}
+<div class="m-auto flex flex-col items-center justify-center w-1/2">
+  <div class="font-bold uppercase text-xl -mt-20">
+    Tạo một dự án mới
+  </div>
+  <form action="" method="post" class="rounded-xl border mt-10 bg-white shadow p-4 w-full">
+    {% csrf_token %}
+    <label for="title" class="block mt-5">
+      <span class="font-semibold text-gray-700">
+        Tiêu đề
+      </span>
+      <input type="text" name="title" id="title" autocomplete=off class="w-full rounded-lg">
+    </label>
+    <label for="description" class="block mt-5">
+      <span class="font-semibold text-gray-700">
+        Mô tả
+      </span>
+      {{ form.description }}
+    </label>
+    <button class="bg-blue-500 text-white p-2 w-full rounded-lg mt-5">
+      Tạo mới
+    </button>
+  </form>
+</div>
+{% endblock body %}
