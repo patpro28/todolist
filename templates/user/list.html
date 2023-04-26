@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load user %}
+
+{% block content_title %}
+<div class="my-10 text-3xl font-bold">
+  Danh sách nhân viên
+</div>
+{% endblock content_title %}
+
+{% block body %}
+<div class="grid grid-cols-1 gap-2">
+  <div class="grid grid-cols-[8fr_1fr_1fr] first:rounded-l-xl rounded-xl last:rounded-r-xl font-bold text-white bg-black divide-x divide-white">
+    <div class="p-3 text-center">User</div>
+    <div class="p-3 text-center">Projects</div>
+    <div class="p-3 text-center">Todolists</div>
+  </div>
+  {% for user in users %}
+  <div class="grid grid-cols-[8fr_1fr_1fr] first:rounded-l-xl rounded-xl shadow-md bg-white last:rounded-r-xl font-bold divide-x divide-black">
+    <div class="p-3 text-center">
+      {% link user %}
+    </div>
+    <div class="p-3 text-center">0</div>
+    <div class="p-3 text-center">0</div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock body %}

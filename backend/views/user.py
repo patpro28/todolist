@@ -9,7 +9,7 @@ from django.contrib.auth.views import (
     PasswordResetCompleteView,
 )
 from django.contrib import messages
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
@@ -19,7 +19,10 @@ from backend.forms import UserLoginForm, UserRegisterForm
 __all__ = [
     'UserLoginView', 
     'UserLogoutView', 
-    'UserRegisterView'
+    'UserRegisterView',
+    'UserListView',
+    'UserDetailView',
+    'UserUpdateView',
 ]
 
 class UserLoginView(LoginView):
@@ -53,3 +56,24 @@ class UserRegisterView(CreateView):
     def form_valid(self, form):
         messages.success(self.request, _('Register success!'))
         return super().form_valid(form)
+    
+class UserListView(ListView):
+    model = User
+    template_name = 'user/list.html'
+    context_object_name = 'users'
+    paginate_by = 20
+
+class UserDetailView(DetailView):
+    model = User
+    template_name = 'user/detail.html'
+    context_object_name = 'user'
+    slug_field = 'username'
+    slug_url_kwarg = 'user'
+
+class UserUpdateView(UpdateView):
+    model = User
+    template_name = 'user/update.html'
+    context_object_name = 'user'
+    slug_field = 'username'
+    slug_url_kwarg = 'user'
+    

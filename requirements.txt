@@ -5,3 +5,4 @@ django-ace
 pygments
 pymdown-extensions
 markupsafe
+docutils
